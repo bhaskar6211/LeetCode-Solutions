@@ -1,5 +1,4 @@
 //Spiral Matrix
-
 import java.util.*;
 
 class Problem_54 {
@@ -11,19 +10,16 @@ class Problem_54 {
         int left = 0, right = matrix[0].length - 1;
 
         while (top <= bottom && left <= right) {
-            // Traverse Left → Right
             for (int i = left; i <= right; i++) {
                 result.add(matrix[top][i]);
             }
             top++;
 
-            // Traverse Top → Bottom
             for (int i = top; i <= bottom; i++) {
                 result.add(matrix[i][right]);
             }
             right--;
 
-            // Traverse Right → Left
             if (top <= bottom) {
                 for (int i = right; i >= left; i--) {
                     result.add(matrix[bottom][i]);
@@ -31,7 +27,6 @@ class Problem_54 {
                 bottom--;
             }
 
-            // Traverse Bottom → Top
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
                     result.add(matrix[i][left]);
